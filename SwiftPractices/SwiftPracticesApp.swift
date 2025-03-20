@@ -11,7 +11,12 @@ import SwiftUI
 struct SwiftPracticesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let overlayView = AnyView(
+                Image("party_popper", bundle: nil)
+                    .resizable()
+            )
+            ContentView(model: ScratchModel(overlayColor: .red, backgroundColor: .yellow, size: 200),
+                        overlayView: overlayView)
         }
     }
 }
